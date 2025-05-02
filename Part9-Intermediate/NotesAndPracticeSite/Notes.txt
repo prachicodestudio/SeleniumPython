@@ -1,0 +1,60 @@
+🔄 Automation Practice Points:
+
+1) Switch to Left Frame: Fill name & email
+
+2) Switch to Right Frame: Click button → handle alert + select from dropdown
+
+3) Switch to Bottom Frame: Read text and print it
+
+4) Return to Main Page: Always use driver.switch_to.default_content()
+
+
+You can switch to a frame using three methods in Selenium:
+✅ 1. By frame name or ID
+If your <iframe> tag has a name or id attribute:
+
+html
+<iframe name="leftFrame"></iframe>
+You can switch like this:
+
+python
+driver.switch_to.frame("leftFrame")
+
+
+✅ 2. By index (0-based)
+Frames are like a list. If there are multiple iframes on the page, you can switch by index:
+
+python
+driver.switch_to.frame(0)  # First frame
+driver.switch_to.frame(1)  # Second frame
+⚠️ Only use this if you are sure of the order of frames.
+
+✅ 3. By locating the WebElement
+You can first locate the frame as a normal web element using XPath, CSS, or any locator, then switch to it:
+
+python
+frame_element = driver.find_element(By.XPATH, "//iframe[@name='rightFrame']")
+driver.switch_to.frame(frame_element)
+This is helpful when the frame has no name or ID.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
