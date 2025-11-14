@@ -1,0 +1,56 @@
+What is ActionChains in Selenium?
+----------------------------------
+ActionChains is a special Selenium class used to perform advanced user interactions that cannot be done with normal click() or send_keys() methods.
+
+These interactions simulate real mouse and keyboard actions.
+
+Why do we use ActionChains?
+-----------------------------
+Because some actions require complex movement or multiple steps, such as:
+
+Hovering the mouse over an element (to show a tooltip)
+
+Drag and drop
+
+Double-click
+
+Right-click (context click)
+
+Holding keyboard keys (Shift, Ctrl, Alt)
+
+Click and hold, then release
+
+Performing multiple steps in sequence
+
+Normal Selenium commands cannot handle these easily, so ActionChains is used.
+
+How to use ActionChains
+--------------------------
+1. Create an ActionChains object
+actions = ActionChains(driver)
+
+
+driver represents the browser.
+
+This tells ActionChains which browser window it should perform the actions on.
+
+What can ActionChains do?
+--------------------------
+ActionChains can:
+
+Move the mouse to an element
+
+Press or release mouse buttons
+
+Press or release keyboard keys
+
+Combine many actions together in a chain
+
+Run all actions together in a sequence using .perform()
+
+Example:
+
+actions.move_to_element(element).click().perform()
+
+
+This will move the mouse to the element and then click it.
